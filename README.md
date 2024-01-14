@@ -19,9 +19,9 @@ $ node repro.js
 ```sh
 $ node --experimental-network-imports repro.js
 ## transformRequest
-const react = await __vite_ssr_dynamic_import__('https://esm.sh/react@18.2.0');
-console.log('[react.version]', react.version);
-__vite_ssr_exports__.default = react.version;
+const __vite_ssr_import_0__ = await __vite_ssr_import__("https://esm.sh/react@18.2.0", {"importedNames":["default"]});
+console.log('[react.version]', __vite_ssr_import_0__.default.version);
+__vite_ssr_exports__.default = __vite_ssr_import_0__.default.version;
 
 ## ssrLoadModule
 [vite] Error when evaluating SSR module repro-entry.js: failed to import "https://esm.sh/react@18.2.0"
