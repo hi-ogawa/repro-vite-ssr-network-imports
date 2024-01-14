@@ -1,13 +1,17 @@
 investigating https://github.com/vitejs/vite/issues/15143
 
 ```sh
+$ node --version
+v18.19.0
+
 # ok
-node --experimental-network-imports repro-entry.js
+$ node --experimental-network-imports repro-entry.js
+[react.version] 18.2.0
 
 # not ok
-node --experimental-network-imports repro.js  # should work?
-node repro-entry.js
-node repro.js
+$ node --experimental-network-imports repro.js  # should work?
+$ node repro-entry.js
+$ node repro.js
 ```
 
 ## without patch
