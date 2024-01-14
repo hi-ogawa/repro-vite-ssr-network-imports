@@ -50,3 +50,16 @@ $ node repro.js
     at new NodeError (node:internal/errors:405:5)
     ...
 ```
+
+## build
+
+```sh
+$ npx vite build --ssr
+$ cat dist/repro-entry.js
+import react from "https://esm.sh/react@18.2.0";
+console.log("[react.version]", react.version);
+const reproEntry = react.version;
+export {
+  reproEntry as default
+};
+```
